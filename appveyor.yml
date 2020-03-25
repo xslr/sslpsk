@@ -9,7 +9,6 @@ install:
 
   - cd ..
   - ps: Invoke-WebRequest "https://www.npcglib.org/~stathis/downloads/$env:OPENSSL_LIB.7z" -OutFile "openssl.7z"
-  - 7z l openssl.7z
   - 7z x openssl.7z
   - cd sslpsk
 
