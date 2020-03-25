@@ -16,13 +16,12 @@ from setuptools import setup, Extension
 
 import os, shutil, sys
 
-BUNDLE_SSL = sys.platform == 'win32' and sys.version_info <= (3,7)
-BUNDLE_SSL = True
+BUNDLE_SSL = sys.platform == 'win32' and sys.version_info < (3,7)
 
 if BUNDLE_SSL:
-    LIB_NAMES = ['ssleay32MD', 'libeay32MD']
+    LIB_NAMES = ['libsslMD', 'libcryptoMD']
 else:
-    LIB_NAMES = ['ssl']
+    LIB_NAMES = ['libsslMD', 'libcryptoMD']
 
 _sslpsk = Extension('sslpsk._sslpsk',
                     sources = ['sslpsk/_sslpsk.c'],
