@@ -21,7 +21,7 @@ BUNDLE_SSL = sys.platform == 'win32' and sys.version_info <= (3,7)
 if BUNDLE_SSL:
     LIB_NAMES = ['libsslMD', 'libcryptoMD']
 else:
-    LIB_NAMES = ['libsslMD', 'libcryptoMD']
+    LIB_NAMES = ['ssl']
 
 _sslpsk = Extension('sslpsk._sslpsk',
                     sources = ['sslpsk/_sslpsk.c'],
